@@ -1,0 +1,10 @@
+---
+- hosts: ci_cd_instance
+  become: yes
+  tasks:
+    - name: Run setup script
+      command: /tmp/setup.sh
+
+    - name: Print success message
+      debug:
+        msg: "Setup successful"

@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simple-node-app-green
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: simple-node-app
+      version: green
+  template:
+    metadata:
+      labels:
+        app: simple-node-app
+        version: green
+    spec:
+      containers:
+      - name: simple-node-app
+        image: ajay112/docker-hub23/simple-node-app:green
+        ports:
+        - containerPort: 3000
